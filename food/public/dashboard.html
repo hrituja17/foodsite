@@ -15,7 +15,11 @@
 
 
     <script src="https://kit.fontawesome.com/b2208ecd95.js" crossorigin="anonymous"></script>
-
+    <style>
+        .listimage{
+    width: 50%;
+}
+    </style>
 
 
     <!-- Morris chart -->
@@ -168,6 +172,62 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+
+
+
+            <div id="linkModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+              
+                  <div class="modal-content">
+                    <div class="modal-body" >
+                        <h3><center>Notifications</center></h3>
+                          <ul class="list-group" id="notify">
+                            
+                        </ul>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+              
+        
+                  
+                  <div id="notModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                  
+                      <div class="modal-content">
+                        <div class="modal-body" style="margin-top: 30px; margin-left: 150px;">
+                            <div class="row">
+                                <input type="text" id="email">
+                            </div>
+                            <div class="row">
+                            <div id="pimg" style="margin-left: 15px;">
+                    
+                            </div>
+                        </div><br>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-success btn-md" onclick="activate()">Accept</button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-danger btn-md" style="color:white;" onclick="reject()">Reject</button>
+                            </div>
+                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+            
+
+
+
+
+
             <!-- Content Header (Page header) -->
             <section class="content-header content-header0">
                 <div class="container-fluid">
@@ -379,56 +439,12 @@
                 </div>
             </div>
 
-        </div>
+        
 
 
 
-        <div id="linkModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-          
-              <div class="modal-content">
-                <div class="modal-body" >
-                    <h3><center>You got notification for activating account</center></h3>
-                      <ul class="list-group">
-                        <li class="list-group-item" id="notify">
-                            
-                        </li>
-                    </ul>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
+              
                 </div>
-                </div>
-              </div>
-          
-    
-              
-              <div id="notModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-              
-                  <div class="modal-content">
-                    <div class="modal-body" style="margin-top: 30px; margin-left: 150px;">
-                        <div id="pimg">
-                
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-success btn-md" onclick="Activate()">Accept</button>
-                            </div>
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-danger btn-md" style="color:white;" onclick="Suspend()">Reject</button>
-                        </div>
-                    </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                          </div>
-                        </div>
-                    </div>
-                    </div>
-                  </div>
-              
-
        
 
 
@@ -644,28 +660,33 @@
 
     </script>
     
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyBJ4G9SN6mBvRj72mcgbw0lR3oaOpP15c4",
-      authDomain: "foodie-e7672.firebaseapp.com",
-      databaseURL: "https://foodie-e7672.firebaseio.com",
-      projectId: "foodie-e7672",
-      storageBucket: "foodie-e7672.appspot.com",
-      messagingSenderId: "197127339220",
-      appId: "1:197127339220:web:caaf9c6ea0ebf3c8cacf41",
-      measurementId: "G-N5KLD29V5P"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-  <script src="./js/notification.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCHXsGkm61Hmk_yLYw5txSPfee_fGiDMDc",
+        authDomain: "foodifi-493e8.firebaseapp.com",
+        databaseURL: "https://foodifi-493e8.firebaseio.com",
+        projectId: "foodifi-493e8",
+        storageBucket: "foodifi-493e8.appspot.com",
+        messagingSenderId: "328551440601",
+        appId: "1:328551440601:web:bc63a7adac54055c3b5ec8",
+        measurementId: "G-LD70NEE6G7"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  <script src="../js/notification.js"></script>
+
+
 
 </body>
 
