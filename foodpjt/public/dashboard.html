@@ -53,7 +53,9 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
                         <div class="dropdown-divider"></div>
-                        <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> Edit Profile </a>
+                        <button class="dropdown-item"  data-toggle="modal" data-target="#editProfileModal"> <i class="fa fa-edit mr-2"></i> Edit Profile </button>
+                        <div class="dropdown-divider"></div>
+                        <a href="./changepassword.html" class="dropdown-item"> <i class="fa fa-lock mr-2"></i> Change Password </a>
                         <div class="dropdown-divider"></div>
                         <button type="button" class="dropdown-item"
                             onclick="logout()">
@@ -364,12 +366,50 @@
                         </div>
                     </div>
                 </div>
+                <div id="editProfileModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                  
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Edit Profile</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="prof">Profile Picture</label>
+                                    <input type="file" name="prof" id="prof" accept="image/png,image/svg" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name..">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact">Contact Number</label>
+                                    <input type="number" maxlength="10" name="contact" id="contact" class="form-control" placeholder="Enter Contact Number..">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email..">
+                                </div>
+                                <div class="text-left">
+                                    <button type="button" class="btn btn-success btn-md" onclick="editProfile()">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                  
+                    </div>
+                </div>
             </div>
 
         </div>
 
         <!-- Main Footer -->
-        <footer class="main-footer 0">
+        <footer class="main-footer 0 text-center">
             <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
         </footer>
 
@@ -385,17 +425,6 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
     <script src="../js/Chart.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../js/adminlte.js"></script>
@@ -407,6 +436,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-storage.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -428,13 +458,11 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-
-<script src="../js/auth.js"></script>
-<script src="../js/toptiffin.js"></script>
-<script type="text/javascript" src="../js/logout.js"></script>
 <script type="text/javascript" src="../js/singleprofile.js"></script>
+<script src="../js/toptiffin.js"></script>
 <script type="text/javascript" src="../js/querys.js"></script>
 <script type="text/javascript" src="../js/chart.js"></script>
+<script type="text/javascript" src="../js/logout.js"></script>
 </body>
 
 </html>

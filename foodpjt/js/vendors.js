@@ -9,7 +9,7 @@ function getvendor(){
     document.getElementById("vendors").style.display = "none";
     document.getElementById("svendors").style.display = "block";
     document.getElementById("back").style.display = "block";
-    var user=document.getElementById("name").value;
+    var user=document.getElementById("search").value;
     var svendorsList = document.getElementById("svendors");
     db.collection('tiffen_service_details')
     .get().then(function(querySnapshot) {
