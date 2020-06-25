@@ -47,7 +47,7 @@ db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").g
                     },
                     ticks: {
                         beginAtZero: false,
-                        stepSize: 1000,
+                        stepSize: 200 ,
                         min: 0
                         
                     }
