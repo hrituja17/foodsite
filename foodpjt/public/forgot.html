@@ -24,58 +24,30 @@
         <div class="formbox" id="notLoggedIn">
             <div class="card-body login-card-body">
                 <div class="card-body login-card-body">
-                    <div class="centered"><h5><b>Please Login before you proceed</b></h5></div>
+                    <div class="centered"><h5>Forgot Password</h5></div>
                     <form>
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                             </div>
-                            <input type="email" class="form-control " name="email" placeholder="Enter Email Address.."
-                                aria-label="Email Address" id="email">
+                            <input type="email" class="form-control " name="forgot-email" placeholder="Enter Email Address.."
+                                aria-label="Email Address" id="forgot-email">
+                            <small class="mt-2">A password reset mail will be sent on this email ID.</small>
                         </div>
 
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                            </div>
-                            <input type="password" class="form-control" name="password"
-                                placeholder="Enter Password.." aria-label="Password" id="password">
-                        </div>
-
-                        <div class="row mb-2">
-                            <div class="col-4">
-                                <button onclick="login()" class="btn btn-success btn-block" type="button">Login</button>
-                            </div>
-                            <div class="col-8 text-right">
-                                <div class="checkbox mt-2">
-                                    <label>  Remember Me </label>
-                                    <input type="checkbox" name="remember">
-                                </div>
-                            </div>
+                        <div class="text-center mb-2">
+                            <button onclick="forgot()" class="btn btn-success" type="button">Reset Password</button>
                         </div>
                     </form>
 
                     <p class="mb-1 text-center">
-                        <a class="forgot" href="./forgot.html">Forgot Password?</a>
+                        <a class="remember" href="./index.html">Login instead</a>
                     </p>
 
                 </div>
             </div>
         </div>
 
-        
-        <div class="card" id="loggedIn">
-            <div class="card-body login-card-body">
-                <div class="card-body login-card-body text-center">
-                    <h4 class="login-box-msg">Welcome, <span id="username"></span></h4>
-
-                    <div class="text-center">
-                        <a href="./dashboard.html" class="btn btn-success btn-md">Proceed to Dashboard</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
     </div>
     <!-- /.login-box -->
 
@@ -109,8 +81,7 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-<script src="../js/auth.js"></script>
-<script src="../js/getuser.js"></script>
+<script src="../js/forgot.js"></script>
 </body>
 
 </html>
