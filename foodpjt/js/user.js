@@ -15,7 +15,8 @@ function getuser(){
     querySnapshot.forEach(function(doc) {
       document.getElementById("susers").style.display = "block";
       if(doc.data().name===user){
-        susersList.innerHTML += "<tr><td>"+doc.data().name+"</td><td>"+doc.data().email+"</td><td>"+doc.data().phone+"</td><td class='text-center'><i class='fa fa-edit' data-toggle='modal' data-target='#sliderModal'></i></td></tr>"
+        susersList.innerHTML += "<tr><td>"+doc.data().name+"</td><td>"+doc.data().email+"</td><td>"+doc.data().phone+
+        "</td><td class='text-center'><i class='fa fa-edit' data-toggle='modal' data-target='#sliderModal'></i></td></tr>"
       }
     });
 });
