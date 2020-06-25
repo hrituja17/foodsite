@@ -158,33 +158,33 @@ th {
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                                                    <li class="nav-item">
-                        <a class="nav-link " href="./carts.html"><i class="fa fa-shopping-cart"></i></a>
-                    </li>
-                                                    <li class="nav-item">
-                        <a class="nav-link " href="./notifications.html"><i class="fa fa-bell"></i></a>
-                    </li>
-                                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2" alt="User Image">
-                        <i class="fa fa fa-angle-down"></i> Michael E. Quinn
+                <li class="nav-item">
+<a class="nav-link " href="./carts.html"><i class="fa fa-shopping-cart"></i></a>
+</li>
+                <li class="nav-item">
+<a class="nav-link " href="./notifications.html"><i class="fa fa-bell"></i></a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link" data-toggle="dropdown" href="#" id="upper-name">
+<img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2" alt="User Image">
+<i class="fa fa fa-angle-down"></i> Hi,
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
+<div class="dropdown-divider"></div>
+<button class="dropdown-item"  data-toggle="modal" data-target="#editProfileModal"> <i class="fa fa-user mr-2"></i> Edit Profile </button>
+<div class="dropdown-divider"></div>
+<a href="./logout.html" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+<i class="fa fa-envelope mr-2"></i> Logout
+</a>
+<form id="logout-form" action="./logout.html" method="POST" style="display: none;">
+<input type="hidden" name="_token" value="2Kk6tcq9Bi5Ly6rhWZYxdXREGe9e2GCmrsz1p3Ea">
+</form>
+</div>
 
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> Edit Profile </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./logout.html" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="fa fa-envelope mr-2"></i> Logout
-                        </a>
-                        <form id="logout-form" action="./logout.html" method="POST" style="display: none;">
-                            <input type="hidden" name="_token" value="2Kk6tcq9Bi5Ly6rhWZYxdXREGe9e2GCmrsz1p3Ea">
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+</li>
+</ul>
+</nav>
 
         <!-- Left side column. contains the logo and sidebar -->
     <!-- Main Sidebar Container -->
@@ -332,57 +332,90 @@ th {
             </thead>
             
        </table> 
-
-       <div id="sliderModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-      
-          <div class="modal-content">
-            <div class="modal-body" style="margin-top: 30px; margin-left: 50px;">
-                <form action="" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <button type="button" class="btn btn-success btn-md" onclick="Activate()">Activate</button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button type="button" class="btn btn-warning btn-md" style="color:white;" onclick="Suspend()">Suspend</button>
-                    </div>
-                        
-                    <div class="col-sm-4">
-                        <button type="button" class="btn btn-danger btn-md" onclick="Delete()">Delete</button>
-                      </div>  
-                    </div>
-                      
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  </div>
-                </form>
-                
-            </div>
-          </div>
-      
-        </div>
-      </div>
-
-
-</div>
-
-    
-
-    <!-- Main Footer -->
-    <div class="col-sm-12"></div>
-    <footer class="main-footer 0">
-        
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 2.1.0
-        </div>
-        <strong>Copyright © 2020 <a href="https://multi-restaurants.smartersvision.com">Food Delivery</a>.</strong> All rights reserved.
-    
-    </footer>
     </div>
 </div>
+<div id="sliderModal" class="modal fade" role="dialog">
+ <div class="modal-dialog">
 
-    <!-- jQuery -->
+   <div class="modal-content">
+     <div class="modal-body" style="margin-top: 30px; margin-left: 50px;">
+         <form action="" enctype="multipart/form-data">
+             <div class="row">
+                 <div class="col-sm-4">
+                     <button type="button" class="btn btn-success btn-md" onclick="Activate()">Activate</button>
+                 </div>
+                 <div class="col-sm-4">
+                     <button type="button" class="btn btn-warning btn-md" style="color:white;" onclick="Suspend()">Suspend</button>
+             </div>
+                 
+             <div class="col-sm-4">
+                 <button type="button" class="btn btn-danger btn-md" onclick="Delete()">Delete</button>
+               </div>  
+             </div>
+               
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+           </div>
+         </form>
+         
+     </div>
+   </div>
+</div>
+<div id="editProfileModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Profile</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="prof">Profile Picture</label>
+                    <input type="file" name="prof" id="prof" accept="image/png,image/svg" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name..">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="number" maxlength="10" name="contact" id="contact" class="form-control" placeholder="Enter Contact Number..">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email..">
+                </div>
+                <div class="form-group">
+                    <label for="change">Change Password</label>
+                    <input type="password" name="change" id="change" class="form-control" placeholder="Enter New Password..">
+                </div>
+                <div class="text-left">
+                    <button type="button" class="btn btn-success btn-md" onclick="editProfile()">Update</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+</div>
+</div>
+</div>
+    <!-- Main Footer -->
+<footer class="main-footer 0 text-center">
+    <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
+</footer>
+</div>
+
+
+
+
+           <!-- jQuery -->
     <script src="../js/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
 
