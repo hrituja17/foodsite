@@ -60,12 +60,9 @@
                         <div class="dropdown-divider"></div>
                         <button class="dropdown-item"  data-toggle="modal" data-target="#editProfileModal"> <i class="fa fa-user mr-2"></i> Edit Profile </button>
                         <div class="dropdown-divider"></div>
-                        <a href="./logout.html" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <button type="button" class="dropdown-item" onclick="logout()">
                             <i class="fa fa-envelope mr-2"></i> Logout
-                        </a>
-                        <form id="logout-form" action="./logout.html" method="POST" style="display: none;">
-                            <input type="hidden" name="_token" value="2Kk6tcq9Bi5Ly6rhWZYxdXREGe9e2GCmrsz1p3Ea">
-                        </form>
+                        </button>
                     </div>
                 </li>
             </ul>
@@ -215,7 +212,6 @@
                         <div class="card-header no-border">
                             <div class="d-flex justify-content-between">
                                 <h3 class="card-title">Earnings</h3>
-                                <a href="./earnings.html">View Total Earnings</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -336,5 +332,6 @@
 </script>
 <script type="text/javascript" src="../js/stats.js"></script>
 <script type="text/javascript" src="../js/bottomprofile.js"></script>
+<script src="../js/logout.js"></script>
 </body>
 </html>
