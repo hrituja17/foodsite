@@ -86,7 +86,7 @@ function editProfile() {
 
                     console.log(newEmail);
 
-                    db.collection("admin").doc("IcqQwevv3q0h6adWppYo").update({
+                    db.collection("admin").doc("HJ2ZbpRXYGgeX3IeYMWZ").update({
                         name: newName,
                         contact: newContact,
                         email: newEmail,

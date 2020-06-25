@@ -122,3 +122,7 @@ footer a:not(.btn):hover,
     font-weight: normal;
     text-decoration: none;
 }
+
+.listimage{
+    width: 40%;
+}
