@@ -123,7 +123,7 @@ db.collection("vendor_collection/vendors/registered_vendors").get().then(functio
 });
 
 
-db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot){
+db.collection("tiffen_service_details/vladblade12@gmail.com/acceptedOrders").get().then(function(querySnapshot){
     querySnapshot.forEach(function(doc){
         earnings += doc.data().totalCost;
     });
