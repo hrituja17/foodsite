@@ -1,8 +1,7 @@
-
 var earningchart = document.getElementById("earning-chart");
  
 var earningtotal=0;
-db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot){
+db.collection("tiffen_service_details/vladblade12@gmail.com/acceptedOrders").get().then(function(querySnapshot){
     querySnapshot.forEach(function(doc){
         earningtotal += doc.data().totalCost;
     });
@@ -48,7 +47,7 @@ db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").g
                     },
                     ticks: {
                         beginAtZero: false,
-                        stepSize: 1000,
+                        stepSize: 1000 ,
                         min: 0
                         
                     }

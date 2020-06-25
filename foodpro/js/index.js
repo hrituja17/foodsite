@@ -1,7 +1,6 @@
 const db = firebase.firestore();
 
 
-
 function getuser(){
   document.getElementById("users").style.display = "none";
   //document.getElementById("susers").style.display = "none";
@@ -79,8 +78,78 @@ db.collection('vendor_collection/vendors/registered_vendors/').get().then(functi
 
 
 
+var totalearning = 0;
+db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot) {
+
+   querySnapshot.forEach(function(doc) {
+       totalearning += doc.data().totalCost;
+   });
+   earning.innerHTML += "<h3>" + totalearning + "</h3>";
+});
+
+
+  var total =0;
+     db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot) {
+    
+        querySnapshot.forEach(function(doc) {
+            total += doc.data().totalCost;
+        });
+        earnings.innerHTML += "<h3>" + total + "</h3>";
+    });
+
+
+// where(firebase.firestore.FieldPath.documentId(), '==', 'saibhavadeesh@gmail.com')
 
 
 
+// TEST CODE
 
+/*
+var total = 0;
 
+db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc){
+        total += doc.data().totalCost;
+    });
+    earnings.innerHTML = "<h3>" + total + "</h3>";
+});
+
+*/
+
+/* Auth code 
+
+var notLoggedIn = document.getElementById("notLoggedIn");
+var loggedIn = document.getElementById("loggedIn");
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if(user) {
+        notLoggedIn.style.display = "none";
+        loggedIn.style.display = "block";
+    } else {
+        notLoggedIn.style.display = "block";
+        loggedIn.style.display = "none";
+    }
+});
+
+function login() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        window.alert("Error: " + errorMessage);
+    });
+}
+
+function logout() {
+    firebase.auth().signOut().then(function() {
+        window.location.href = "http://127.0.0.1:5500/index.html"
+    })
+    .catch(function(error) {
+        window.alert("Error:" + error);
+    });
+}
+
+*/

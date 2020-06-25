@@ -5,7 +5,7 @@ var vendors =0;
 var users = 0;
 var vendor=0;
    
-   db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot) {
+   db.collection("tiffen_service_details/vladblade12@gmail.com/acceptedOrders").get().then(function(querySnapshot) {
 
        querySnapshot.forEach(function(doc) {
         totalearning += doc.data().totalCost;
@@ -15,7 +15,7 @@ var vendor=0;
 
 
   
-    db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot) {
+    db.collection("tiffen_service_details/vladblade12@gmail.com/acceptedOrders").get().then(function(querySnapshot) {
     
         querySnapshot.forEach(function(doc) {
             total += doc.data().totalCost;
@@ -40,7 +40,7 @@ var vendor=0;
          totalusers.innerHTML += "<h3>" + users + "</h3>";
    });
 
-   db.collection("tiffen_service_details/saibhavadeesh@gmail.com/acceptedOrders").get().then(function(querySnapshot){
+   db.collection("tiffen_service_details/vladblade12@gmail.com/acceptedOrders").get().then(function(querySnapshot){
         querySnapshot.forEach(function(doc){
             orders++;
           });
