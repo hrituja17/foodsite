@@ -1,3 +1,4 @@
+
 var earningchart = document.getElementById("earning-chart");
  
 var earningtotal=0;
