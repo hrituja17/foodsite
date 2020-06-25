@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Food Delivery | Manage Mobile Application</title>
+    <title>Foodifi.in | Manage Mobile Application</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="icon" type="image/png" href="../img/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +53,7 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item"  data-toggle="modal" data-target="#editProfileModal"> <i class="fa fa-user mr-2"></i> Edit Profile </button>
+                        <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> Edit Profile </a>
                         <div class="dropdown-divider"></div>
                         <button type="button" class="dropdown-item"
                             onclick="logout()">
@@ -68,8 +68,8 @@
         <aside class="main-sidebar sidebar-light-primary elevation-4">
             <!-- Brand Logo -->
             <a href="./dashboard.html" class="brand-link bg-white">
-                <img src="../img/ic_launcher.png" alt="Food Delivery" class="brand-image">
-                <span class="brand-text font-weight-light">Food Delivery</span>
+                <img src="../img/ic_launcher.png" alt="Foodifi.in" class="brand-image">
+                <span class="brand-text font-weight-light">Foodifi.in</span>
             </a>
 
             <!-- Sidebar -->
@@ -162,7 +162,9 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>53</h3>
+                                <div id="totalorders">
+
+                                </div>
 
                                 <p>Total Orders</p>
                             </div>
@@ -197,7 +199,9 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>7</h3>
+                                <div id="totalvendors">
+
+                                </div>
                                 <p>Total Vendors</p>
                             </div>
                             <div class="icon">
@@ -212,7 +216,9 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>47</h3>
+                                <div id="totalusers">
+
+                                </div>
 
                                 <p>Total Users</p>
                             </div>
@@ -248,14 +254,14 @@
                                         <span></span>
                                     </p>
                                     <p class="ml-auto d-flex flex-column text-right">
-                                        <span class="text-success"> 53</span></span> <span class="text-muted">Total
+                                        <span class="text-success" id="totalvendor"></span></span> <span class="text-muted">Total
                                             Vendors</span>
                                     </p>
                                 </div>
                                 <!-- /.d-flex -->
 
                                 <div class="position-relative mb-4">
-                                    <canvas id="sales-chart" height="200"></canvas>
+                                    <canvas id="earning-chart" height="200"></canvas>
                                 </div>
 
                                 <div class="d-flex flex-row justify-content-end">
@@ -267,7 +273,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header no-border">
-                                <h3 class="card-title">Restaurants</h3>
+                                <h3 class="card-title">Tiffin Centre</h3>
                                 <div class="card-tools">
                                     <a href="https://multi-restaurants.smartersvision.com/restaurants"
                                         class="btn btn-tool btn-sm"><i class="fa fa-bars"></i> </a>
@@ -275,15 +281,20 @@
                             </div>
                             <div class="card-body p-0">
                                 <table class="table table-striped table-valign-middle">
-                                    <thead>
+                                    <thead id="vendors">
                                         <tr>
                                             <th>Image</th>
-                                            <th>Restaurant</th>
-                                            <th>Address</th>
-                                            <th>Actions</th>
+                                            <th>Tiffin Centre</th>
+                                            <th>Email</th>
+                                            <th>Contact</th>
+                                        </tr>
+                                    </thead >
+                                    <thead id="vendorList">
+                                        <tr>
+                                          
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <!--<tbody>
 
                                         <tr>
                                             <td>
@@ -347,62 +358,21 @@
                                                     class="text-muted"> <i class="fa fa-edit"></i> </a>
                                             </td>
                                         </tr>
-                                    </tbody>
+                                    </tbody>-->
                                 </table>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div id="editProfileModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                  
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h4 class="modal-title">Edit Profile</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <form enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label for="prof">Profile Picture</label>
-                                    <input type="file" name="prof" id="prof" accept="image/png,image/svg" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name..">
-                                </div>
-                                <div class="form-group">
-                                    <label for="contact">Contact Number</label>
-                                    <input type="number" maxlength="10" name="contact" id="contact" class="form-control" placeholder="Enter Contact Number..">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email..">
-                                </div>
-                                <div class="form-group">
-                                    <label for="change">Change Password</label>
-                                    <input type="password" name="change" id="change" class="form-control" placeholder="Enter New Password..">
-                                </div>
-                                <div class="text-left">
-                                    <button type="button" class="btn btn-success btn-md" onclick="editProfile()">Update</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                  
                     </div>
                 </div>
             </div>
 
         </div>
 
-                    <!-- Main Footer -->
-                    <footer class="main-footer 0 text-center">
-                        <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
-                    </footer>
+        <!-- Main Footer -->
+        <footer class="main-footer 0">
+            <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
+        </footer>
+
     </div>
 
 
@@ -458,8 +428,11 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-<script src="../js/singleprofile.js"></script>
-<script src="../js/logout.js"></script>
+
+<script src="../js/auth.js"></script>
+<script src="../js/toptiffin.js"></script>
+<script type="text/javascript" src="../js/querys.js"></script>
+<script type="text/javascript" src="../js/chart.js"></script>
 </body>
 
 </html>
