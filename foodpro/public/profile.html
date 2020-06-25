@@ -6,17 +6,18 @@
     <title>Foodifi.in | Manage Mobile Application</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="icon" type="image/png" href="../img/logo.png"/>
-    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 
     <script src="https://kit.fontawesome.com/b2208ecd95.js" crossorigin="anonymous"></script>
 
+
 <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.css">
 
-    
-    
+
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="../css/primary.css">
@@ -33,7 +34,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="./dashboard.html" class="nav-link">Dashboard</a> 
+                    <a href="./dashboard.html" class="nav-link">Dashboard</a>
                     <!-- TO DO... -->
                 </li>
             </ul>
@@ -47,19 +48,24 @@
                         <a class="nav-link " href="./notifications.html"><i class="fa fa-bell"></i></a>
                     </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" data-toggle="dropdown" href="#" id="upper-name">
-                                        <img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2" alt="User Image">
-                                        <i class="fa fa-angle-down"></i> Hi,
-                                    </a>
+                    <a class="nav-link" data-toggle="dropdown" href="#" id="upper-name">
+                        <img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2" alt="User Image">
+                        <i class="fa fa-angle-down"></i> Hi,
+                    </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
                         <div class="dropdown-divider"></div>
                         <button class="dropdown-item"  data-toggle="modal" data-target="#editProfileModal"> <i class="fa fa-user mr-2"></i> Edit Profile </button>
                         <div class="dropdown-divider"></div>
-                        <button type="button" class="dropdown-item" onclick="logout()">
+                        <a href="./logout.html" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="fa fa-envelope mr-2"></i> Logout
-                        </button>
+                        </a>
+                        <form id="logout-form" action="./logout.html" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="2Kk6tcq9Bi5Ly6rhWZYxdXREGe9e2GCmrsz1p3Ea">
+                        </form>
                     </div>
+
+   
                 </li>
             </ul>
         </nav>
@@ -82,50 +88,50 @@
         <a class="nav-link active" href="./dashboard.html">                <i class="nav-icon fa fa-dashboard"></i>            <p>Dashboard</p></a>
     </li>
 
+
 <li class="nav-header">App Management</li>
+<!-- Total Orders -->
+<li class="nav-item">
+    <a class="nav-link " href="./orders.html"> <i
+            class="nav-icon fa fa-shopping-basket"></i>
+        <p>All Orders</p>
+    </a>
+</li>
 
-    <!-- Total Orders -->
-    <li class="nav-item">
-        <a class="nav-link " href="./orders.html"> <i
-                class="nav-icon fa fa-shopping-basket"></i>
-            <p>All Orders</p>
-        </a>
-    </li>
+<!-- Total Vendors -->
+<li class="nav-item">
+    <a class="nav-link " href="./restaurants.html"> <i
+            class="nav-icon fa fa-cutlery"></i>
+        <p>Total Vendors</p>
+    </a>
+</li>
+
+<!-- Total Users -->
+<li class="nav-item">
+    <a class="nav-link " href="./users.html"> <i class="nav-icon fa fa-users"></i>
+        <p>Users</p>
+    </a>
+</li>
+
+<!-- Total Payments -->
+<li class="nav-item">
+    <a class="nav-link " href="./statistics.html"> <i class="nav-icon fas fa-chart-line"></i>
+        <p>All Statistics</p>
+    </a>
+</li>
+
+<!-- Content Moderation -->
+<li class="nav-item">
+    <a class="nav-link " href="./contentmod.html"> <i class="nav-icon far fa-edit"></i>
+        <p>Content Moderation</p>
+    </a>
+</li>
 
 
-
-    <!-- Total Vendors -->
-    <li class="nav-item">
-        <a class="nav-link " href="./restaurants.html"> <i
-                class="nav-icon fa fa-cutlery"></i>
-            <p>Total Vendors</p>
-        </a>
-    </li>
-
-    <!-- Total Users -->
-    <li class="nav-item">
-        <a class="nav-link " href="./users.html"> <i class="nav-icon fa fa-users"></i>
-            <p>Users</p>
-        </a>
-    </li>
-
-    <!-- Total Payments -->
-    <li class="nav-item">
-        <a class="nav-link " href="./statistics.html"> <i class="nav-icon fas fa-chart-line"></i>
-            <p>All Statistics</p>
-        </a>
-    </li>
-
-    <!-- Content Moderation -->
-    <li class="nav-item">
-        <a class="nav-link " href="./contentmod.html"> <i class="nav-icon far fa-edit"></i>
-            <p>Content Moderation</p>
-        </a>
-    </li>
-
-           </ul>
+            </ul>
         </nav>
         <!-- /.sidebar-menu -->
+
     </div>
     <!-- /.sidebar -->
 </aside>
@@ -142,13 +148,13 @@
 <div class="container-fluid">
 <div class="row mb-2">
   <div class="col-sm-6">
-    <h1 class="m-0 text-dark">Orders<small class="ml-3 mr-3">|</small><small>Orders Management</small></h1>
+    <h1 class="m-0 text-dark">Profile<small class="ml-3 mr-3">|</small><small>Admin Profile</small></h1>
   </div><!-- /.col -->
   <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
       <li class="breadcrumb-item"><a href="./dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
       </li>
-      <li class="breadcrumb-item active">Orders List</li>
+      <li class="breadcrumb-item active">Admin Profile</li>
     </ol>
   </div><!-- /.col -->
 </div><!-- /.row -->
@@ -157,6 +163,43 @@
 <!-- /.content-header -->
 
 <div class="content">
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-6 col-sm-12 text-center">
+            <div class="profileimageholder picmargin">
+                <img src="../img/profile.PNG" alt="profile picture" class="profileimage">
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 text-left picmargin">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4><b>Name</b></h4>
+                </div>
+                <div class="col-sm-6 text-left" id="admin-name">
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4><b>Contact Number</b></h4>
+                </div>
+                <div class="col-sm-6 text-left" id="admin-contact">
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4><b>Email</b></h4>
+                </div>
+                <div class="col-sm-6 text-left" id="admin-email">
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="editProfileModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
       
@@ -200,54 +243,58 @@
         </div>
     </div>
 </div>
+
     </div>
 
-                <!-- Main Footer -->
-                <footer class="main-footer 0 text-center">
-                    <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
-                </footer>
-
+    <!-- Main Footer -->
+    <footer class="main-footer 0 text-center">
+        <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
+    </footer>
 
 </div>
 
+ 
 
     <!-- jQuery -->
     <script src="../js/jquery.min.js"></script>
-
+    <!-- jQuery UI 1.11.4 -->
     
+
     <!-- Bootstrap 4 -->
     <script src="../js/bootstrap.bundle.min.js"></script>
 
-        <script src="../js/Chart.min.js"></script>
+
     <!-- AdminLTE App -->
     <script src="../js/adminlte.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-storage.js"></script>
-    
-    
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-analytics.js"></script>
-    
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBJ4G9SN6mBvRj72mcgbw0lR3oaOpP15c4",
-        authDomain: "foodie-e7672.firebaseapp.com",
-        databaseURL: "https://foodie-e7672.firebaseio.com",
-        projectId: "foodie-e7672",
-        storageBucket: "foodie-e7672.appspot.com",
-        messagingSenderId: "197127339220",
-        appId: "1:197127339220:web:b9738d87654c0310cacf41",
-        measurementId: "G-MYXDWXH9KL"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-    <script src="../js/singleprofile.js"></script>
-    <script src="../js/logout.js"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-storage.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBJ4G9SN6mBvRj72mcgbw0lR3oaOpP15c4",
+    authDomain: "foodie-e7672.firebaseapp.com",
+    databaseURL: "https://foodie-e7672.firebaseio.com",
+    projectId: "foodie-e7672",
+    storageBucket: "foodie-e7672.appspot.com",
+    messagingSenderId: "197127339220",
+    appId: "1:197127339220:web:b9738d87654c0310cacf41",
+    measurementId: "G-MYXDWXH9KL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script type="text/javascript" src="../js/profile.js"></script>
 </body>
 </html>

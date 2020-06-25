@@ -8,44 +8,10 @@
     <link rel="icon" type="image/png" href="../img/logo.png"/>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-
-    <!-- Ionicons -->
-
-
-    <script src="https://kit.fontawesome.com/b2208ecd95.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-<!-- Morris chart -->
-
-<!-- jvectormap -->
-
-<!-- Date Picker -->
-
-<!-- Daterange picker -->
-
-<link rel="stylesheet" href="../css/dataTables.bootstrap4.css">
+        <script src="https://kit.fontawesome.com/b2208ecd95.js" crossorigin="anonymous"></script>
 
 <style>
-/*table {
-  border-collapse: collapse;
-  width: 100%;
-}
 
-tr>th{
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-  background-color: red;
-  color: white;
-  
-}*/
 #vendors{
     display: block;
 }
@@ -131,8 +97,6 @@ th {
 
 <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.css">
-    <link rel="stylesheet" href="../css/sweetalert.css">
-
 
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
@@ -158,35 +122,35 @@ th {
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                                                    <li class="nav-item">
-                        <a class="nav-link " href="./carts.html"><i class="fa fa-shopping-cart"></i></a>
-                    </li>
-                                                    <li class="nav-item">
-                        <a class="nav-link " href="./notifications.html"><i class="fa fa-bell"></i></a>
-                    </li>
-                                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2" alt="User Image">
-                        <i class="fa fa fa-angle-down"></i> Michael E. Quinn
+                <li class="nav-item">
+<a class="nav-link " href="./carts.html"><i class="fa fa-shopping-cart"></i></a>
+</li>
+                <li class="nav-item">
+<a class="nav-link " href="./notifications.html"><i class="fa fa-bell"></i></a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link" data-toggle="dropdown" href="#" id="upper-name">
+<img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2" alt="User Image">
+<i class="fa fa fa-angle-down"></i> Hi,
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
+<div class="dropdown-divider"></div>
+<button class="dropdown-item"  data-toggle="modal" data-target="#editProfileModal"> <i class="fa fa-user mr-2"></i> Edit Profile </button>
+<div class="dropdown-divider"></div>
+<button type="button" class="dropdown-item"
+onclick="logout()">
+<i class="fa fa-envelope mr-2"></i> Logout
+</button>
+<form id="logout-form" action="./logout.html" method="POST" style="display: none;">
+<input type="hidden" name="_token" value="2Kk6tcq9Bi5Ly6rhWZYxdXREGe9e2GCmrsz1p3Ea">
+</form>
+</div>
 
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> Edit Profile </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./logout.html" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="fa fa-envelope mr-2"></i> Logout
-                        </a>
-                        <form id="logout-form" action="./logout.html" method="POST" style="display: none;">
-                            <input type="hidden" name="_token" value="2Kk6tcq9Bi5Ly6rhWZYxdXREGe9e2GCmrsz1p3Ea">
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+</li>
+</ul>
+</nav>
 
-        <!-- Left side column. contains the logo and sidebar -->
     <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
@@ -203,11 +167,6 @@ th {
                 <li class="nav-item">
         <a class="nav-link active" href="./dashboard.html">                <i class="nav-icon fa fa-dashboard"></i>            <p>Dashboard</p></a>
     </li>
-<!--
-    <li class="nav-item">
-        <a class="nav-link " href="./favorites.html">                <i class="nav-icon fa fa-heart"></i><p>Favorites</p></a>
-    </li>
--->
 
 <li class="nav-header">App Management</li>
 <!-- Total Orders -->
@@ -218,10 +177,7 @@ th {
     </a>
 </li>
 
-<!-- Total Earnings -->
-<!--<li class="nav-item">
-    <a class="nav-link " href="./earnings.html"> <i class="nav-icon fa fa-money"></i>
-        <p>Total Earnings</p>
+     <p>Total Earnings</p>
     </a>
 </li>-->
 
@@ -279,29 +235,7 @@ th {
 </div> 
 
 <div class="content-wrapper">
-    <!--<div class="container-fluid ">
-    <h1><center>Vendors</center></h1>
 
-    <table>
-        <thead>
-          <tr>
-            <th class="text-center">Name</th>
-            <th>Email</th>
-            <th>Contact</th>
-            <th>Address</th>
-            <th>SubscriptionStartDate</th>
-          </tr>
-        </thead>
-          <tbody id="vendors">
-
-          </tbody>
-          <tbody id="svendors">
-
-        </tbody>
-     </table>   
-
-   
-</div>-->
 
 <div class="card">
     <div class="card-header no-border">
@@ -310,7 +244,7 @@ th {
     <div class="card-body p-0">
     
         <table class="table table-striped table-valign-middle">
-            <thead>
+            <thead id="vendors" style="margin-left: 7vw;">
                 <tr>
                     <th>Name</th>
                     <th >Email</th>
@@ -320,246 +254,111 @@ th {
                     <th >Action</th>
                 </tr>
             </thead>
-            <tbody id="vendors">
-
-            </tbody>
-            <tbody id="svendors">
-
-          </tbody>
+            <thead id="svendors" style="margin-left: 12vw;">
+                <tr>
+                    <th>Name</th>
+                    <th >Email</th>
+                    <th >Contact</th>
+                    <th >Address</th>
+                    <th>SubscriptionStartDate</th>
+                    <th >Action</th>
+                </tr>
+            </thead>
+            
        </table> 
+    </div>
+</div>
+<div id="sliderModal" class="modal fade" role="dialog">
+ <div class="modal-dialog">
 
-       <div id="sliderModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-      
-          <div class="modal-content">
-            <div class="modal-body">
-                <form action="" enctype="multipart/form-data">
-                    <div class="text-left">
-                        <button type="button" class="btn btn-success btn-md" onclick="Suspend()">Suspend</button>
-                        </div>
-                        <div class="text-right">
-                        <button type="button" class="btn btn-success btn-md" onclick="Activate()">Activate</button>
-                        </div>
+   <div class="modal-content">
+     <div class="modal-body" style="margin-top: 30px; margin-left: 50px;">
+         <form action="" enctype="multipart/form-data">
+             <div class="row">
+                 <div class="col-sm-4">
+                     <button type="button" class="btn btn-success btn-md" onclick="Activate()">Activate</button>
+                 </div>
+                 <div class="col-sm-4">
+                     <button type="button" class="btn btn-warning btn-md" style="color:white;" onclick="Suspend()">Suspend</button>
+             </div>
+                 
+             <div class="col-sm-4">
+                 <button type="button" class="btn btn-danger btn-md" onclick="Delete()">Delete</button>
+               </div>  
+             </div>
+               
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+           </div>
+         </form>
+         
+     </div>
+   </div>
+</div>
+<div id="editProfileModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Profile</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="prof">Profile Picture</label>
+                    <input type="file" name="prof" id="prof" accept="image/png,image/svg" class="form-control">
                 </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-      
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name..">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="number" maxlength="10" name="contact" id="contact" class="form-control" placeholder="Enter Contact Number..">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email..">
+                </div>
+                <div class="form-group">
+                    <label for="change">Change Password</label>
+                    <input type="password" name="change" id="change" class="form-control" placeholder="Enter New Password..">
+                </div>
+                <div class="text-left">
+                    <button type="button" class="btn btn-success btn-md" onclick="editProfile()">Update</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
-
-
+  
+    </div>
 </div>
-
-    
-
+</div>
+</div>
     <!-- Main Footer -->
-    <footer class="main-footer 0">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 2.1.0
-        </div>
-        <strong>Copyright © 2020 <a href="https://multi-restaurants.smartersvision.com">Foodifi.in</a>.</strong> All rights reserved.
-    </footer>
-
+<footer class="main-footer 0 text-center">
+    <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
+</footer>
 </div>
 
-    <!-- jQuery -->
+
+
+
+           <!-- jQuery -->
     <script src="../js/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
-
-
     <!-- Bootstrap 4 -->
     <script src="../js/bootstrap.bundle.min.js"></script>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-messaging.js"></script>
-
-
-
-    <script type="text/javascript">
-        const messaging = firebase.messaging();
-        navigator.serviceWorker.register("https://multi-restaurants.smartersvision.com/firebase/sw-js")
-            .then((registration) => {
-                messaging.useServiceWorker(registration);
-                messaging.requestPermission()
-                    .then(function() {
-                        console.log('Notification permission granted.');
-                        getRegToken();
-
-                    })
-                    .catch(function(err) {
-                        console.log('Unable to get permission to notify.', err);
-                    });
-                messaging.onMessage(function(payload) {
-                    console.log("Message received. ", payload);
-                    notificationTitle = payload.data.title;
-                    notificationOptions = {
-                        body: payload.data.body,
-                        icon: payload.data.icon,
-                        image:  payload.data.image
-                    };
-                    var notification = new Notification(notificationTitle,notificationOptions);
-                });
-            });
-
-        function getRegToken(argument) {
-            messaging.getToken().then(function(currentToken) {
-                if (currentToken) {
-                    saveToken(currentToken);
-                    console.log(currentToken);
-                } else {
-                    console.log('No Instance ID token available. Request permission to generate one.');
-                }
-            })
-                .catch(function(err) {
-                    console.log('An error occurred while retrieving token. ', err);
-                });
-        }
-
-
-        function saveToken(currentToken) {
-            $.ajax({
-                type: "POST",
-                data: {'device_token': currentToken, 'api_token': 'PivvPlsQWxPl1bB5KrbKNBuraJit0PrUZekQUgtLyTRuyBq921atFtoR1HuA'},
-                url: 'https://multi-restaurants.smartersvision.com/api/users/1',
-                success: function (data) {
-
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-        }
-    </script>
-
-    <!-- Sparkline -->
-
-
-
-
-
-    <!-- jQuery Knob Chart -->
-
-    <!-- daterangepicker -->
-
-
-    <!-- datepicker -->
-
-    <!-- Bootstrap WYSIHTML5 -->
-
-    <!-- Slimscroll -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/sweetalert.min.js"></script>
-    <!-- FastClick -->
-
-        <script src="../js/Chart.min.js"></script>
+ 
+    <script src="../js/Chart.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../js/adminlte.js"></script>
 
-
-    <!-- AdminLTE for demo purposes -->
-    <script src="../js/demo.js"></script>
-
-    <script src="../js/scripts.js"></script>
-        <script type="text/javascript">
-        var data = [1000, 2000, 3000, 2500, 2700, 2500, 3000];
-        var labels = ['JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-
-        function renderChart(chartNode, data, labels) {
-            var ticksStyle = {
-                fontColor: '#495057',
-                fontStyle: 'bold'
-            };
-
-            var mode = 'index';
-            var intersect = true;
-            return new Chart(chartNode, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            backgroundColor: '#007bff',
-                            borderColor: '#007bff',
-                            data: data
-                        }
-                    ]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    tooltips: {
-                        mode: mode,
-                        intersect: intersect
-                    },
-                    hover: {
-                        mode: mode,
-                        intersect: intersect
-                    },
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        yAxes: [{
-                            // display: false,
-                            gridLines: {
-                                display: true,
-                                lineWidth: '4px',
-                                color: 'rgba(0, 0, 0, .2)',
-                                zeroLineColor: 'transparent'
-                            },
-                            ticks: $.extend({
-                                beginAtZero: true,
-
-                                // Include a dollar sign in the ticks
-                                callback: function (value, index, values) {
-                                    if (value >= 1000) {
-                                        value /= 1000
-                                        value += 'k'
-                                    }
-                                    return '$' + value
-                                }
-                            }, ticksStyle)
-                        }],
-                        xAxes: [{
-                            display: true,
-                            gridLines: {
-                                display: false
-                            },
-                            ticks: ticksStyle
-                        }]
-                    }
-                }
-            })
-        }
-
-        $(function () {
-            'use strict'
-
-            var $salesChart = $('#sales-chart')
-            $.ajax({
-                url: "https://multi-restaurants.smartersvision.com/api/payments/byMonth?api_token=PivvPlsQWxPl1bB5KrbKNBuraJit0PrUZekQUgtLyTRuyBq921atFtoR1HuA",
-                success: function (result) {
-                    $("#loadingMessage").html("");
-                    var data = result.data[0];
-                    var labels = result.data[1];
-                    renderChart($salesChart, data, labels)
-                },
-                error: function (err) {
-                    $("#loadingMessage").html("Error");
-                }
-            });
-            //var salesChart = renderChart($salesChart, data, labels);
-        })
-
-    </script>
 
 
 
@@ -590,6 +389,7 @@ th {
   firebase.analytics();
 </script>
 <script src="../js/vendors.js"></script>
+<script src="../js/logout.js"></script>
 
 </body>
 </html>

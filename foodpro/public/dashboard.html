@@ -6,31 +6,14 @@
     <title>Foodifi.in | Manage Mobile Application</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="icon" type="image/png" href="../img/logo.png" />
-    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-
-    <!-- Ionicons -->
-
+ 
 
     <script src="https://kit.fontawesome.com/b2208ecd95.js" crossorigin="anonymous"></script>
 
 
 
-    <!-- Morris chart -->
-
-    <!-- jvectormap -->
-
-    <!-- Date Picker -->
-
-    <!-- Daterange picker -->
-
-
-    <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.css">
-    <link rel="stylesheet" href="../css/sweetalert.css">
-
 
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
@@ -63,30 +46,24 @@
                     <a class="nav-link " href="./notifications.html"><i class="fa fa-bell"></i></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2"
-                            alt="User Image">
-                        <i class="fa fa fa-angle-down"></i> Michael E. Quinn
-
+                    <a class="nav-link" data-toggle="dropdown" href="#" id="upper-name">
+                        <img src="../img/user0-icon.jpg" class="brand-image mx-2 img-circle elevation-2" alt="User Image">
+                        <i class="fa fa-angle-down"></i> Hi,
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> My Profile </a>
                         <div class="dropdown-divider"></div>
                         <a href="./profile.html" class="dropdown-item"> <i class="fa fa-user mr-2"></i> Edit Profile </a>
                         <div class="dropdown-divider"></div>
-                        <a href="./logout.html" class="dropdown-item"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <button type="button" class="dropdown-item"
+                            onclick="logout()">
                             <i class="fa fa-envelope mr-2"></i> Logout
-                        </a>
-                        <form id="logout-form" action="./logout.html" method="POST" style="display: none;">
-                            <input type="hidden" name="_token" value="2Kk6tcq9Bi5Ly6rhWZYxdXREGe9e2GCmrsz1p3Ea">
-                        </form>
+                    </button>
                     </div>
                 </li>
             </ul>
         </nav>
 
-        <!-- Left side column. contains the logo and sidebar -->
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-light-primary elevation-4">
             <!-- Brand Logo -->
@@ -116,8 +93,11 @@
                                 <p>All Orders</p>
                             </a>
                         </li>
+
+    
+
                         <!-- Total Vendors -->
-                       <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link " href="./restaurants.html"> <i
                                     class="nav-icon fa fa-cutlery"></i>
                                 <p>Total Vendors</p>
@@ -274,7 +254,7 @@
                                         <span></span>
                                     </p>
                                     <p class="ml-auto d-flex flex-column text-right">
-                                        <span class="text-success" id="totalvendor"> </span> <span class="text-muted">Total
+                                        <span class="text-success" id="totalvendor"></span></span> <span class="text-muted">Total
                                             Vendors</span>
                                     </p>
                                 </div>
@@ -293,7 +273,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header no-border">
-                                <h3 class="card-title">Tiffin Centres</h3>
+                                <h3 class="card-title">Tiffin Centre</h3>
                                 <div class="card-tools">
                                     <a href="https://multi-restaurants.smartersvision.com/restaurants"
                                         class="btn btn-tool btn-sm"><i class="fa fa-bars"></i> </a>
@@ -308,15 +288,21 @@
                                             <th>Email</th>
                                             <th>Contact</th>
                                         </tr>
+                                        
                                     </thead >
-                                    <thead id="vendorsList">
+                                       
+                                    
+                                    <thead id="vendorList">
                                         <tr>
-                                           <!----<th>Image</th>
-                                            <th>Tiffin Centre</th>
-                                            <th>Email</th>
-                                            <th>Contact</th>--> 
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>
+                                          
+                                        
                                     </thead>
+                                    <!--<div id="vendorList"></div>-->
                                     <!--<tbody>
 
                                         <tr>
@@ -326,7 +312,7 @@
                                             </td>
                                             <td>Polleria Ricardo Sanchez</td>
                                             <td>
-                                                   grrbythhtht
+
                                             </td>
                                             <td class="text-center">
                                                 <a href="https://multi-restaurants.smartersvision.com/restaurants/1/edit"
@@ -372,7 +358,7 @@
                                                     src='../img/restaurant-1837150_1920-icon.jpg'
                                                     alt='restaurant-1837150_1920'>
                                             </td>
-                                            <td>La Perla Tiffin Centre</td>
+                                            <td>La Perla Restaurant</td>
                                             <td>
                                                 360 Jody Road Chester Heights, PA 19017
                                             </td>
@@ -381,7 +367,7 @@
                                                     class="text-muted"> <i class="fa fa-edit"></i> </a>
                                             </td>
                                         </tr>
-                                    </tbody>--->
+                                    </tbody>-->
                                 </table>
                             </div>
                         </div>
@@ -393,11 +379,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer 0">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 2.1.0
-            </div>
-            <strong>Copyright © 2020 <a href="https://multi-restaurants.smartersvision.com">Foodifi.in</a>.</strong>
-            All rights reserved.
+            <strong>© 2020 <a href="./dashboard.html">Foodifi.in</a></strong> All rights reserved | Powered by RedPositive Service OPC Pvt Ltd.
         </footer>
 
     </div>
@@ -407,36 +389,28 @@
     <script src="../js/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
 
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
-
 
     <!-- Bootstrap 4 -->
     <script src="../js/bootstrap.bundle.min.js"></script>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-messaging.js"></script>
 
-    <!-- Bootstrap WYSIHTML5 -->
 
-    <!-- Slimscroll -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/sweetalert.min.js"></script>
-    <!-- FastClick -->
+
+
+
+
+
+
+
+
 
     <script src="../js/Chart.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../js/adminlte.js"></script>
 
 
-    <!-- AdminLTE for demo purposes -->
-    <script src="../js/demo.js"></script>
-
-    <script src="../js/scripts.js"></script>
-    
-    
+  
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
@@ -463,9 +437,10 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
+
+<script src="../js/auth.js"></script>
 <script src="../js/toptiffin.js"></script>
 <script type="text/javascript" src="../js/querys.js"></script>
-<script src="../js/index.js"></script>
 <script type="text/javascript" src="../js/chart.js"></script>
 </body>
 

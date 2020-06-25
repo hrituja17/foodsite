@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Foodifi.in | Manage Mobile Application</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <script src="https://kit.fontawesome.com/b2208ecd95.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/primary.css">
+</head>
+
+<body class="loginPage">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="../public/logout.html"><img src="../img/logo.png" alt="Foodifi.in"></a>
+        </div>
+        <div class="formbox" id="notLoggedIn">
+            <div class="card-body login-card-body">
+                <div class="card-body login-card-body">
+                    <div class="centered"><p>Sign In before you proceed</p></div>
+                    <form>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                            <input type="email" class="form-control " name="email" placeholder="Enter Email Address.."
+                                aria-label="Email Address" id="email">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" name="password"
+                                placeholder="Enter Password.." aria-label="Password" id="password">
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                <button onclick="login()" class="btn btn-success btn-block" type="button">Login</button>
+                            </div>
+                            <div class="col-8 text-right">
+                                <div class="checkbox mt-2">
+                                    <label>  Remember Me </label>
+                                    <input type="checkbox" name="remember">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p class="mb-1 text-center">
+                        <a class="forgot" href="">Forgot Password?</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card" id="loggedIn">
+            <div class="card-body login-card-body">
+                <div class="card-body login-card-body text-center">
+                    <h4 class="login-box-msg">Welcome, <span id="username"></span></h4>
+
+                    <div class="text-center">
+                        <a href="./dashboard.html" class="btn btn-success btn-md">Proceed to Dashboard</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.login-box -->
+
+
+    <script src="../js/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBJ4G9SN6mBvRj72mcgbw0lR3oaOpP15c4",
+    authDomain: "foodie-e7672.firebaseapp.com",
+    databaseURL: "https://foodie-e7672.firebaseio.com",
+    projectId: "foodie-e7672",
+    storageBucket: "foodie-e7672.appspot.com",
+    messagingSenderId: "197127339220",
+    appId: "1:197127339220:web:b9738d87654c0310cacf41",
+    measurementId: "G-MYXDWXH9KL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="../js/auth.js"></script>
+<script src="../js/getuser.js"></script>
+</body>
+
+</html>
