@@ -30,7 +30,10 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.css">
     <link rel="stylesheet" href="../css/sweetalert.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
@@ -60,7 +63,7 @@
                     <a class="nav-link " href="./carts.html"><i class="fa fa-shopping-cart"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="./notifications.html"><i class="fa fa-bell"></i></a>
+                    <a class="nav-link "><i class="fa fa-bell" data-toggle='modal' data-target='#linkModal'></i></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -378,6 +381,62 @@
 
         </div>
 
+
+
+        <div id="linkModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <div class="modal-content">
+                <div class="modal-body" >
+                    <h3><center>You got notification for activating account</center></h3>
+                      <ul class="list-group">
+                        <li class="list-group-item" id="notify">
+                            
+                        </li>
+                    </ul>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+          
+    
+              
+              <div id="notModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+              
+                  <div class="modal-content">
+                    <div class="modal-body" style="margin-top: 30px; margin-left: 150px;">
+                        <div id="pimg">
+                
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-success btn-md" onclick="Activate()">Accept</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-danger btn-md" style="color:white;" onclick="Suspend()">Reject</button>
+                        </div>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+              
+
+       
+
+
+    
+
+
+
+
         <!-- Main Footer -->
         <footer class="main-footer 0">
             <div class="float-right d-none d-sm-block">
@@ -606,7 +665,7 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
-  <script src="./js/index.js"></script>
+  <script src="./js/notification.js"></script>
 
 </body>
 
